@@ -28,10 +28,6 @@ namespace WpfApp5
             sliJegy.Value = 3;
             dpDatum.Text =  DateTime.Now.ToString();
 
-            
-            
-            
-            
         }
 
         private void sliJegy_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
