@@ -1,0 +1,88 @@
+﻿<Window x:Class="WpfApp5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem x:Name="tiElso" Width="50" Height="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center">Név</Label>
+                    <TextBox x:Name="txtNev" Grid.Column="1" Width="150" 
+                             HorizontalAlignment="Left" Height="50"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             FontSize="20"></TextBox>
+                    <Label Grid.Row="1" FontSize="40" VerticalAlignment="Center"
+               HorizontalAlignment="Center">Tantárgy</Label>
+
+                    <ComboBox x:Name="cboTantargy" Grid.Column="1"            
+                              Grid.Row="1" Width="150" Height="50"
+                              VerticalAlignment="Center" HorizontalAlignment="Left">
+                        
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      VerticalContentAlignment="Center">Matematika
+                        </ComboBoxItem>
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      VerticalContentAlignment="Center">Magyar
+                        </ComboBoxItem>
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      VerticalContentAlignment="Center">Történelem
+                        </ComboBoxItem>
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      VerticalContentAlignment="Center">Fizika
+                        </ComboBoxItem>
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      VerticalContentAlignment="Center">Testnevelés
+                        </ComboBoxItem>
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      VerticalContentAlignment="Center">Angol
+                        </ComboBoxItem>
+                        
+                    </ComboBox>
+
+                    <Label Grid.Row="2" FontSize="40" VerticalAlignment="Center"
+               HorizontalAlignment="Center">Dátum</Label>
+                    <DatePicker x:Name="dpDatum" Grid.Row="2" Grid.Column="1" Width="150" Height="25"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"></DatePicker>
+
+                    <Label Grid.Row="3" FontSize="40" VerticalAlignment="Center"
+               HorizontalAlignment="Center">Jegy</Label>
+                    <Label x:Name="lblJegy" Grid.Row="3" Grid.Column="1" Width="50" Height="50" 
+               HorizontalAlignment="Left"></Label>
+                    <Slider x:Name="sliJegy" Grid.Row="3" 
+                            Grid.Column="1" VerticalAlignment="Center"
+                            Minimum="1" Maximum="5" Width="300" 
+                            Margin="0,0,190,0" 
+                            ValueChanged="sliJegy_ValueChanged"
+                            Ticks="1, 2, 3, 4, 5"
+                            IsSnapToTickEnabled="True"></Slider>
+                    <Button x:Name="btnRogzit" Grid.Row="4" 
+                            Width="200" Height="50" Click="btnRogzit_Click">Rögzít</Button>
+                    <Button x:Name="btnMegnyit" Grid.Row="4" Grid.Column="1"
+                            Height="50" Width="200" HorizontalAlignment="Left" Margin="10,0,0,0" Click="btnMegnyit_Click"
+                            >Megnyit</Button>
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="tiMasodik" Width="50" Height="15">
+                <DataGrid x:Name="dgData"></DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
